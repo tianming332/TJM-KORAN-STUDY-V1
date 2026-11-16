@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F6F6F1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#181817" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="韩语单词闪卡、逐词拆分句子、错题本与生词本。">
+  <title>TJM 韩语学习 · Korean Study</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="knowledge.css">
+</head>
+<body>
+  <script>document.body.dataset.theme = ['white', 'gray', 'black'].find(t => t === localStorage.getItem('tjm-theme')) || 'white';</script>
+  <aside class="sidebar" aria-label="韩语学习导航">
+    <a class="brand" href="#" data-view="flash" aria-label="TJM 韩语学习">
+      <span class="brand-icon">t<span>j</span>m</span>
+      <div><b>TJM <span>Office</span></b><small>韩语学习 · 종합한국어</small></div>
+    </a>
+    <div class="workspace-label">复习</div>
+    <nav class="nav-group-list">
+      <a class="nav active" data-view="flash"><span aria-hidden="true">◧</span>闪卡复习<small id="dueCount" title="今日待复习">0</small></a>
+      <a class="nav" data-view="wrong"><span aria-hidden="true">✕</span>错题本<small id="wrongCount">0</small></a>
+      <a class="nav" data-view="vocab"><span aria-hidden="true">+</span>生词本<small id="vocabCount">0</small></a>
+      <a class="nav" data-view="notes"><span aria-hidden="true">✎</span>笔记<small id="notesCount">0</small></a>
+    </nav>
+    <div class="workspace-label">学习内容</div>
+    <nav class="nav-group-list">
+      <a class="nav" data-view="knowledge"><span aria-hidden="true">❐</span>知识点</a>
+      <a class="nav" data-view="sentences"><span aria-hidden="true">≡</span>句子拆分</a>
+      <a class="nav" data-view="words"><span aria-hidden="true">▦</span>单词表</a>
+    </nav>
+    <div class="workspace-label">资料</div>
+    <nav class="nav-group-list">
+      <a class="nav" data-view="reference"><span aria-hidden="true">ⓘ</span>资料与核对</a>
+      <a class="nav" data-view="backup"><span aria-hidden="true">⇅</span>数据与备份</a>
+    </nav>
+    <div class="sidebar-bottom"><span class="dot" aria-hidden="true"></span><span>记录只保存在本机浏览器</span></div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <div class="crumb">TJM OFFICE <span>/</span> <b id="crumbView">闪卡复习</b></div>
+      <form class="search" id="searchForm" role="search">
+        <input id="searchInput" type="search" placeholder="搜索韩文或中文，例如 친구 / 朋友" autocomplete="off" aria-label="搜索韩文或中文">
+        <button class="primary" type="submit">搜索</button>
+      </form>
+      <div class="theme-control" role="group" aria-label="外观">
+        <span>外观</span>
+        <div class="theme-options">
+          <button type="button" data-theme-choice="white" aria-label="白"><i></i><span class="theme-name">白</span></button>
+          <button type="button" data-theme-choice="gray" aria-label="灰"><i></i><span class="theme-name">灰</span></button>
+          <button type="button" data-theme-choice="black" aria-label="黑"><i></i><span class="theme-name">黑</span></button>
+        </div>
+      </div>
+    </header>
+    <main id="main"></main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="noteBar" class="note-bar" role="toolbar" aria-label="笔记" hidden></div>
+  <dialog id="noteDialog" class="note-dialog" aria-label="批注">
+    <form method="dialog">
+      <h2>批注</h2>
+      <blockquote></blockquote>
+      <textarea rows="4" placeholder="写下你的理解、疑问或记忆方法" aria-label="批注内容"></textarea>
+      <div class="dialog-actions"><button class="btn" value="cancel">取消</button><button class="btn primary" value="save">保存</button></div>
+    </form>
+  </dialog>
+
+  <script src="vendor/ts-fsrs-6.0.0.umd.js"></script>
+  <script src="data.js"></script>
+  <script src="data-handbook.js"></script>
+  <script src="knowledge.js"></script>
+  <script src="app.js"></script>
+  <script src="notes.js"></script>
+</body>
+</html>

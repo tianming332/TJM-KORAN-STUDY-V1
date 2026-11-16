@@ -1,0 +1,7 @@
+wiktionary-ko-zh.js 的内容来自中文维基词典（zh.wiktionary.org）的「朝鲜语」词条，
+经 kaikki.org 的 wiktextract 提取（2026-11-01 数据），再由 tools/build_dict.py 筛选整理：
+只保留有中文释义的词条，最多 6 条释义、3 个例句。
+
+原始数据：https://kaikki.org/zhwiktionary/朝鲜语/
+许可：知识共享 署名-相同方式共享 4.0（CC BY-SA 4.0）与 GNU 自由文档许可证（GFDL）。
+再发布或改编这份数据时，需要注明来源维基词典，并以相同许可发布。
