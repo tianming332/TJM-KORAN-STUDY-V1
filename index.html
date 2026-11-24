@@ -9,9 +9,10 @@
   <title>TJM 韩语学习 · Korean Study</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="knowledge.css">
+  <link rel="stylesheet" href="update-2026-11-18.css">
 </head>
 <body>
-  <script>document.body.dataset.theme = ['white', 'gray', 'black'].find(t => t === localStorage.getItem('tjm-theme')) || 'white';</script>
+  <script>try {document.body.dataset.theme = ['white','gray','black'].find(t => t === localStorage.getItem('tjm-theme')) || 'white';} catch(e) {document.body.dataset.theme='white';}</script>
   <aside class="sidebar" aria-label="韩语学习导航">
     <a class="brand" href="#" data-view="flash" aria-label="TJM 韩语学习">
       <span class="brand-icon">t<span>j</span>m</span>
@@ -37,7 +38,6 @@
     </nav>
     <div class="sidebar-bottom"><span class="dot" aria-hidden="true"></span><span>记录只保存在本机浏览器</span></div>
   </aside>
-
   <div class="workspace">
     <header class="topbar">
       <div class="crumb">TJM OFFICE <span>/</span> <b id="crumbView">闪卡复习</b></div>
@@ -56,23 +56,22 @@
     </header>
     <main id="main"></main>
   </div>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="noteBar" class="note-bar" role="toolbar" aria-label="笔记" hidden></div>
   <dialog id="noteDialog" class="note-dialog" aria-label="批注">
     <form method="dialog">
-      <h2>批注</h2>
-      <blockquote></blockquote>
+      <h2>批注</h2><blockquote></blockquote>
       <textarea rows="4" placeholder="写下你的理解、疑问或记忆方法" aria-label="批注内容"></textarea>
       <div class="dialog-actions"><button class="btn" value="cancel">取消</button><button class="btn primary" value="save">保存</button></div>
     </form>
   </dialog>
-
   <script src="vendor/ts-fsrs-6.0.0.umd.js"></script>
   <script src="data.js"></script>
   <script src="data-handbook.js"></script>
+  <script src="lesson-1118.js"></script>
   <script src="knowledge.js"></script>
   <script src="app.js"></script>
   <script src="notes.js"></script>
+  <script src="update-2026-11-18.js"></script>
 </body>
 </html>
